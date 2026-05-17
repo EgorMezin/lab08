@@ -6,12 +6,19 @@ on:
       - 'v*'  # Запускается только при пуше тегов вида v1.0.0, v0.1.0.0 и т.д.
   workflow_dispatch:  # Возможность запустить вручную
 
+permissions:
+  contents: write
+  actions: read
+
 env:
   BUILD_TYPE: Release
 
 jobs:
   build-linux:
     runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
     
     steps:
     - uses: actions/checkout@v4
