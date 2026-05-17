@@ -16,3 +16,16 @@ set(CPACK_DEBIAN_PACKAGE_NAME "libprint-dev")
 set(CPACK_DEBIAN_PACKAGE_PREDEPENDS "cmake >= 3.0")
 set(CPACK_DEBIAN_PACKAGE_RELEASE 1)
 include(CPack)
+<<EOF
+<<'EOF'
+q
+
+
+
+
+
+:q!
+EOF
+if(UNIX AND NOT APPLE)
+    set(CPACK_GENERATOR "DEB;RPM;TGZ")
+endif()
